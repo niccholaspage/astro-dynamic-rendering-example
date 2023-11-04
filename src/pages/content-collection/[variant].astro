@@ -1,0 +1,22 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const variants = await getCollection("variants");
+  return variants.map((variant) => ({
+    params: {
+      variant: variant.slug,
+    },
+    props: {
+      entry: variant,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+---
+
+<Content />

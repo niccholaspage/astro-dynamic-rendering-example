@@ -2,6 +2,12 @@
 import Layout from "./Layout.astro";
 
 import "../styles/b.css";
+
+interface Props {
+  data?: string;
+}
+
+const { data } = Astro.props;
 ---
 
 <style>
@@ -19,4 +25,5 @@ import "../styles/b.css";
 <Layout>
   <h1>Variant B (global styling on h1)</h1>
   <p>This is variant B, and Variant B's text color is blue (scoped styling)</p>
+  {data ? <p>{data}</p> : <p>No data provided.</p>}
 </Layout>
