@@ -1,0 +1,22 @@
+---
+import Layout from "./Layout.astro";
+
+import "../styles/b.css";
+---
+
+<style>
+  p {
+    color: #0284c7;
+  }
+</style>
+
+<script>
+  const message = document.createElement("p");
+  message.textContent = "Message from variant B";
+  document.getElementById("message-panel")!.appendChild(message);
+</script>
+
+<Layout>
+  <h1>Variant B (global styling on h1)</h1>
+  <p>This is variant B, and Variant B's text color is blue (scoped styling)</p>
+</Layout>

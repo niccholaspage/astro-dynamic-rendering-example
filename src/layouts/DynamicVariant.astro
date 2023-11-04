@@ -1,0 +1,12 @@
+---
+import VariantA from "./VariantA.astro";
+import VariantB from "./VariantB.astro";
+
+interface Props {
+  variant: "a" | "b";
+}
+
+const { variant } = Astro.props;
+---
+
+{variant === "a" ? <VariantA /> : <VariantB />}

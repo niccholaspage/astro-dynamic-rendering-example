@@ -1,0 +1,22 @@
+---
+import DynamicVariant from "../../layouts/DynamicVariant.astro";
+
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        variant: "a" as const,
+      },
+    },
+    {
+      params: {
+        variant: "b" as const,
+      },
+    },
+  ];
+}
+
+const { variant } = Astro.params;
+---
+
+<DynamicVariant variant={variant} />
