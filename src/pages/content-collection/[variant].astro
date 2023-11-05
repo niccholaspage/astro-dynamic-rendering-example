@@ -16,6 +16,9 @@ export const getStaticPaths = (async () => {
 
 const { entry } = Astro.props;
 
+// @ts-expect-error
+Astro.locals.data = "cool data passed from top level route";
+
 const { Content } = await entry.render();
 ---
 

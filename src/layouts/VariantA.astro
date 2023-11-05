@@ -7,7 +7,8 @@ interface Props {
   data?: string;
 }
 
-const { data } = Astro.props;
+// @ts-expect-error
+const { data } = Astro.locals;
 ---
 
 <style>
